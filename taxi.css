@@ -1,0 +1,153 @@
+body {
+    color: white;
+    background-color: #1A1A1A;
+    font-family: 'Courier New',monospace;
+    max-width: 950px;
+    line-height: 25px;
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+li {
+    margin-top: 0px;
+    margin-bottom: 3px;
+    word-break: break-all;
+}
+th {
+    color: #F1C50E;
+    text-decoration: underline;
+    text-align: left;
+}
+th, td {
+    width: 900px;
+    padding-bottom: 12px;
+}
+pre {
+    white-space: pre-line;
+    font-size: 15px;
+}
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+a:hover {color: #F1C50E !important;}
+.no-space {
+    margin-top: 0px;
+    margin-bottom: 1px;
+}
+.some-space {
+    margin-top: 0px;
+    margin-bottom: 12px;
+}
+.homepage a {
+    color: #F1C50E;
+    text-decoration: underline;
+}
+.trust {color: #F1C50E;}
+.title {
+    color: #F1C50E;
+    text-decoration: underline;
+}
+.title a {
+    color: #F1C50E;
+    text-decoration: underline;
+}
+.title a:hover {
+    color: #F1C50E;
+    text-decoration: underline;
+}
+.downtime a {
+    color: red;
+    font-weight: bold;
+    text-decoration: none;
+}
+.downtime {
+    color: red;
+    font-weight: bold;
+}
+.ddos a {
+    color: orange;
+    font-weight: bold;
+    text-decoration: none;
+}
+.ddos {
+    color: orange;
+    font-weight: bold;
+}
+.more {
+    font-size: 20px;
+    margin-left: 10px;
+    margin-top: -1px;
+    position: absolute;
+}
+.main-table {font-size:17px}
+#homepage-desktop {display: block;}
+#homepage-mobile {display: none;}
+@media screen and (max-width: 600px) {
+    #homepage-desktop {display: none;}
+    #homepage-mobile {display: block;}
+}
+.line {
+    border-left: 5px solid white;
+    height: 14507px;
+    margin-left: 10px;
+    float: left;
+    margin-top: 8px;
+}
+.journal-text {
+    font-size: 15px;
+    font-weight: bold; 
+    margin-left: 30px;
+}
+.journal-date {
+    font-size: 14px;
+    font-weight: bold;
+    color: #F1C50E;
+}
+.dash {
+    color: white;
+    background-color: white;
+    width: 15px;
+    height: 3px;
+    float: left;
+    border-color: white;
+    margin-right: 12px;
+}
+.dash-clearnet {
+    color: #F1C50E;
+    background-color: #F1C50E;
+    width: 15px;
+    height: 3px;
+    float: left;
+    border-color: #F1C50E;
+    margin-right: 12px;
+}
+.line-year-1 {
+    color: white;
+    background-color: white;
+    width: 160px;
+    height: 3px;
+    float: left;
+    border-color: white;
+    margin-left: -275px;
+}
+.line-year-2 {
+    color: white;
+    background-color: white;
+    width: 160px;
+    height: 3px;
+    border-color: white;
+    margin-left: 10px;
+}
+.year {
+    color: #F1C50E;
+    font-size: 40px;
+    float: left;
+    text-indent: 175px;
+}
+#journal-desktop {display: block;}
+@media screen and (max-width: 600px) {
+    #journal-desktop {display: none;}
+}

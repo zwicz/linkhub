@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>My Link Hub</title>
+
+  <!-- Favicon optional -->
+  <link rel="icon" href="favicon.ico">
+
+  <!-- You can remove this if you don't use it -->
+  <!-- <link rel="stylesheet" href="taxi.css" media="screen"> -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    /* ==============
+       BASIC PAGE STYLE
+       ============== */
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #050509;
+      color: #f5f5f5;
+    }
+
+    a {
+      color: #ffd54f;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .title {
+      text-align: center;
+      margin: 10px 0 4px;
+      font-size: 26px;
+      color: #f1c40f;
+    }
+
+    .subtitle {
+      text-align: center;
+      margin: 0 0 20px;
+      font-size: 13px;
+      color: #ccc;
+    }
+
+    /* Keep tor.taxi-style status colors */
+    .downtime a,
+    .downtime {
+      color: #ff6b6b !important;
+    }
+
+    .ddos a,
+    .ddos {
+      color: #ffa726 !important;
+    }
+
+    /* ==============
+       COLUMN LAYOUT
+       ============== */
+    .columns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .column {
+      background: #101018;
+      border-radius: 6px;
+      padding: 14px 16px;
+      min-width: 220px;
+      max-width: 320px;
+      flex: 1 1 250px;
+      box-shadow: 0 0 0 1px #27273a;
+    }
+
+    .column h2 {
+      margin: 0 0 8px;
+      font-size: 18px;
+      color: #f1c40f;
+      border-bottom: 1px solid #33334a;
+      padding-bottom: 6px;
+    }
+
+    .link-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      font-size: 14px;
+    }
+
+    .link-list li {
+      margin: 6px 0;
+      line-height: 1.4;
+      word-break: break-all;
+    }
+
+    .note {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 11px;
+      color: #9e9eb5;
+    }
+
+    /* Mobile tweaks */
+    @media (max-width: 600px) {
+      body {
+        padding: 10px;
+      }
+
+      .column {
+        min-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- MAIN TITLE -->
+  <h2 class="title">My Link Hub</h2>
+  <p class="subtitle">All my stuff in one place – crypto, Discord, streaming, tor links, and useful sites.</p>
+
+  <!--
+    ============================
+    COLUMNS WRAPPER
+    Each section below is ONE category.
+    Change the heading text (inside <h2>),
+    then add/remove <li> items as needed.
+    ============================
+  -->
+  <div class="columns">
+
+    <!-- =========================
+         CATEGORY 1: CRYPTO
+         Edit this block for your crypto links
+         ========================= -->
+    <section class="column" id="category-crypto">
+      <h2>Crypto</h2>
+      <ul class="link-list">
+        <!-- Example: replace these with your own -->
+        <li>
+          <a href="https://example.com" target="_blank">Main Exchange</a>
+        </li>
+        <li>
+          <a href="https://example.com" target="_blank">Portfolio Tracker</a>
+        </li>
+        <!-- Downtime example (shows red like tor.taxi) -->
+        <li class="downtime">
+          <a href="https://example.com" target="_blank">Old Explorer (Down)</a>
+        </li>
+
+        <!--
+          Add more crypto links above this comment.
+          To add one, copy-paste:
+
+          <li>
+            <a href="https://your-crypto-link.com" target="_blank">Your Crypto Site</a>
+          </li>
+        -->
+      </ul>
+    </section>
+
+    <!-- =========================
+         CATEGORY 2: DISCORD
+         Edit this block for your Discord links
+         ========================= -->
+    <section class="column" id="category-discord">
+      <h2>Discord</h2>
+      <ul class="link-list">
+        <!-- Example Discord links -->
+        <li>
+          <a href="https://discord.gg/YOURSERVER" target="_blank">Main Discord Server</a>
+        </li>
+        <li>
+          <a href="https://discord.com/channels/@me" target="_blank">DMs</a>
+        </li>
+
+        <!-- Add more Discord links above this comment -->
+      </ul>
+    </section>
+
+    <!-- =========================
+         CATEGORY 3: STREAMING
+         Edit this block for your movie/TV/music sites
+         ========================= -->
+    <section class="column" id="category-streaming">
+      <h2>Streaming</h2>
+      <ul class="link-list">
+        <!-- Example streaming links -->
+        <li>
+          <a href="https://example.com" target="_blank">Movies Site</a>
+        </li>
+        <li>
+          <a href="https://example.com" target="_blank">TV Shows</a>
+        </li>
+        <li>
+          <a href="https://example.com" target="_blank">Anime / Cartoons</a>
+        </li>
+
+        <!-- Add more streaming links above this comment -->
+      </ul>
+    </section>
+
+    <!-- =========================
+         CATEGORY 4: TOR LINKS
+         Edit this block for tor-specific sites
+         (Onion addresses go here)
+         ========================= -->
+    <section class="column" id="category-tor">
+      <h2>Tor Links</h2>
+      <ul class="link-list">
+        <!-- Example tor-style links -->
+        <li>
+          <a href="http://exampleonionaddress.onion" target="_blank">Example Onion</a>
+        </li>
+        <li>
+          <a href="http://anotherexampleonion.onion" target="_blank">Another Onion</a>
+        </li>
+        <!-- DDoS example (shows orange) -->
+        <li class="ddos">
+          <a href="http://someserviceunderddos.onion" target="_blank">Service Under DDoS</a>
+        </li>
+
+        <!-- Add more Tor links above this comment -->
+      </ul>
+    </section>
+
+    <!-- =========================
+         CATEGORY 5: USEFUL
+         General tools, dashboards, docs, etc.
+         ========================= -->
+    <section class="column" id="category-useful">
+      <h2>Useful</h2>
+      <ul class="link-list">
+        <!-- Example useful links -->
+        <li>
+          <a href="http://192.168.1.1" target="_blank">Router Admin</a>
+        </li>
+        <li>
+          <a href="http://your-homeserver.local" target="_blank">Home Server Dashboard</a>
+        </li>
+        <li>
+          <a href="https://example.com" target="_blank">Speedtest</a>
+        </li>
+
+        <!-- Add more useful links above this comment -->
+      </ul>
+    </section>
+
+  </div>
+
+  <p class="note">
+    Edit this file directly to change categories, link names, and URLs.
+    Copy a whole <code>&lt;section class="column"&gt;</code> block to add new categories.
+  </p>
+
+</body>
+</html>
