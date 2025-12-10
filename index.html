@@ -146,11 +146,13 @@
           <a href="https://kucoin.com" target="_blank">KuCoin</a>
         </li>
         <li>
-          <a href="https://example.com" target="_blank">Portfolio Tracker</a>
+          <a href="https://example.com" target="_blank">Easy Crypto</a>
         </li>
-        <!-- Downtime example (shows red like tor.taxi) -->
-        <li class="downtime">
-          <a href="https://example.com" target="_blank">Old Explorer (Down)</a>
+        <!-- Live NZD prices -->
+        <li style="margin-top: 10px; list-style: none;">
+          <strong>Live Rates (NZD):</strong><br>
+          <span id="ltc-nzd">1 LTC: loading...</span><br>
+          <span id="xmr-nzd">1 XMR: loading...</span>
         </li>
 
         <!--
@@ -260,6 +262,51 @@
     Edit this file directly to change categories, link names, and URLs.
     Copy a whole <code>&lt;section class="column"&gt;</code> block to add new categories.
   </p>
+
+  <script>
+  // Simple free-rate fetch using CoinGecko public API
+  async function updateCryptoToNZD() {
+    try {
+      // Request LTC and XMR prices in NZD
+      const res = await fetch(
+        "https://api.coingecko.com/api/v3/simple/price?ids=litecoin,monero&vs_currencies=nzd"
+      );
+
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      const data = await res.json();
+
+      // Extract prices
+      const ltcNzd = data.litecoin?.nzd;
+      const xmrNzd = data.monero?.nzd;
+
+      // Format numbers (no decimals or 2 decimals, up to you)
+      const format = (value) =>
+        typeof value === "number"
+          ? "$" + value.toLocaleString("en-NZ", { maximumFractionDigits: 2 })
+          : "N/A";
+
+      // Update DOM
+      const ltcSpan = document.getElementById("ltc-nzd");
+      const xmrSpan = document.getElementById("xmr-nzd");
+
+      if (ltcSpan) ltcSpan.textContent = "1 LTC: " + format(ltcNzd);
+      if (xmrSpan) xmrSpan.textContent = "1 XMR: " + format(xmrNzd);
+    } catch (err) {
+      console.error("Price fetch error:", err);
+      const ltcSpan = document.getElementById("ltc-nzd");
+      const xmrSpan = document.getElementById("xmr-nzd");
+      if (ltcSpan) ltcSpan.textContent = "1 LTC: error";
+      if (xmrSpan) xmrSpan.textContent = "1 XMR: error";
+    }
+  }
+
+  // Run once on load
+  updateCryptoToNZD();
+
+  // OPTIONAL: refresh every 60 seconds (adjust interval as needed)
+  // setInterval(updateCryptoToNZD, 60000);
+</script>
+
 
 </body>
 </html>
